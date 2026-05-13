@@ -959,7 +959,8 @@ ws.onmessage = event => {
 
         function connectWS() {
             // const url = document.getElementById("wsUrl").value.trim();
-            const url = document.getElementById("wsUrl").selectedOptions[0].text;
+            const urlselect = document.getElementById("wsUrl");
+            const url = urlselect.options[urlselect.selectedIndex].text.trim();
 
             // alert(url);
 
