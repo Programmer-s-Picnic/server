@@ -470,7 +470,8 @@
             outline: none;
         }
 
-        input:focus,select:focus,
+        input:focus,
+        select:focus,
         textarea:focus {
             border-color: var(--saffron-dark);
             box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.18);
@@ -543,7 +544,7 @@
             overflow: auto;
             white-space: pre-wrap;
             background: #111827;
-            color:teal !important;
+            color: teal !important;
             border-radius: 22px;
             padding: 18px;
             font-size: 14px;
@@ -958,7 +959,9 @@ ws.onmessage = event => {
 
         function connectWS() {
             // const url = document.getElementById("wsUrl").value.trim();
-            const url = document.getElementById("wsUrl").selected.trim();
+            const url = document.getElementById("wsUrl").selectedOptions[0].text;
+
+            // alert(url);
 
             if (!url) {
                 log("Please enter a WebSocket URL.");
