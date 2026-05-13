@@ -470,7 +470,7 @@
             outline: none;
         }
 
-        input:focus,
+        input:focus,select:focus,
         textarea:focus {
             border-color: var(--saffron-dark);
             box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.18);
@@ -543,7 +543,7 @@
             overflow: auto;
             white-space: pre-wrap;
             background: #111827;
-            color: #fef3c7;
+            color:teal !important;
             border-radius: 22px;
             padding: 18px;
             font-size: 14px;
@@ -812,7 +812,7 @@ ws.onmessage = event => {
                 <div class="card">
                     <div class="form-row">
                         <label for="wsUrl">WebSocket URL</label>
-                        <select id="wsUrl">
+                        <select class="btn" id="wsUrl">
                             <option value="wss://ws.postman-echo.com/raw">wss://ws.postman-echo.com/raw</option>
                             <option value="wss://server.learnwithchampak.live">wss://server.learnwithchampak.live
                             </option>
@@ -957,7 +957,8 @@ ws.onmessage = event => {
         }
 
         function connectWS() {
-            const url = document.getElementById("wsUrl").value.trim();
+            // const url = document.getElementById("wsUrl").value.trim();
+            const url = document.getElementById("wsUrl").selected.trim();
 
             if (!url) {
                 log("Please enter a WebSocket URL.");
