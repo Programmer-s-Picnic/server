@@ -812,7 +812,13 @@ ws.onmessage = event => {
                 <div class="card">
                     <div class="form-row">
                         <label for="wsUrl">WebSocket URL</label>
-                        <input id="wsUrl" value="wss://ws.postman-echo.com/raw" />
+                        <select id="wsUrl">
+                            <option value="wss://ws.postman-echo.com/raw">wss://ws.postman-echo.com/raw</option>
+                            <option value="wss://server.learnwithchampak.live">wss://server.learnwithchampak.live
+                            </option>
+
+                        </select>
+                        <!-- <input id="wsUrl" value="wss://server.learnwithchampak.live" /> -->
                     </div>
 
                     <div id="status" class="status">
